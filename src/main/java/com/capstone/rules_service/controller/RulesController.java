@@ -49,3 +49,9 @@ public class RulesController {
     // }
 
 }
+        @DeleteMapping("/{rid}")
+        public ResponseEntity<Void> deleteRule(@PathVariable("rid")int ruleId){
+            rulesService.deleteRule(ruleId);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }        
+}   
